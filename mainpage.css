@@ -119,37 +119,51 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skills-category {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1rem;
 }
 
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1.5rem;
-    justify-content: center;
 }
 
 .skill-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 1rem;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.8rem;
     transition: transform 0.3s, border-color 0.3s;
-    flex: 1 1 120px;
-    max-width: 150px;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-blue);
+    background-color: rgba(14, 165, 233, 0.05);
 }
 
 .skill-card i {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--text-light);
+}
+
+.skill-card span {
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .projects-grid {
