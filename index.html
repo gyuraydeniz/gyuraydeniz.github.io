@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolyom | Hoş Geldiniz</title>
+    <title>Gyurays Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* CSS Başlangıç Ayarları */
         :root {
-            --primary-color: #2563eb; /* Mavi tonu */
+            --primary-color: #2563eb;
             --bg-color: #ffffff;
             --text-color: #1f2937;
             --light-gray: #f3f4f6;
@@ -27,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* Navigasyon Menüsü */
         nav {
             display: flex;
             justify-content: space-between;
@@ -66,7 +64,6 @@
             color: var(--primary-color);
         }
 
-        /* Ana Karşılama Alanı (Hero Section) */
         .hero {
             height: 100vh;
             display: flex;
@@ -110,7 +107,6 @@
             box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
 
-        /* Mobil Menü İçin Küçük Ayar */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .nav-links { gap: 1rem; }
@@ -120,7 +116,7 @@
 <body>
 
     <nav>
-        <a href="#" class="logo">PORTFOLYO.</a>
+        <a href="#" class="logo">PORTFOLIO</a>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
             <li><a href="#about">About Me</a></li>
@@ -128,13 +124,12 @@
     </nav>
 
     <section class="hero">
-        <h1>Merhaba, Ben <span>İsminiz</span></h1>
-        <p>Dijital dünyada modern deneyimler tasarlayan ve geliştiren bir yazılımcıyım. Projelerimi keşfetmek için aşağı kaydırın.</p>
-        <a href="#projects" class="cta-button">Çalışmalarımı Gör</a>
+        <h1>Hello, I am <span>Gyuray Deniz</span></h1>
+        <p>I am a software developer designing and building modern experiences in the digital world. Scroll down to explore my projects.</p>
+        <a href="#projects" class="cta-button">View My Work</a>
     </section>
 
     <script>
-        // Basit bir JavaScript: Menüye tıklandığında yumuşak kaydırma
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -144,7 +139,6 @@
             });
         });
 
-        // Sayfa kaydırıldığında navigasyon stilini değiştirme
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
