@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #2563eb;
-    --bg-color: #ffffff;
-    --text-color: #1f2937;
-    --light-gray: #f3f4f6;
+    --primary-color: #2563eb; 
+    --bg-color: #020617; 
+    --text-color: #f1f5f9; 
+    --light-gray: #1f2937;    
+    --paragraph-color: #94a3b8;
 }
 
 * {
@@ -26,16 +27,16 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(2, 6, 23, 0.9);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--light-gray);
 }
 
 .logo {
     font-weight: 800;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -64,13 +65,13 @@ nav {
     align-items: center;
     text-align: center;
     padding: 0 10%;
-    background: radial-gradient(circle at top right, #eff6ff, transparent);
 }
 
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.1;
+    color: var(--text-color);
 }
 
 .hero h1 span {
@@ -79,7 +80,7 @@ nav {
 
 .hero p {
     font-size: 1.25rem;
-    color: #6b7280;
+    color: var(--paragraph-color);
     max-width: 600px;
     margin-bottom: 2rem;
 }
@@ -96,7 +97,7 @@ nav {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
