@@ -123,6 +123,8 @@ h2 {
 }
 
 .skills-category {
+    display: block;
+    width: 100%;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
