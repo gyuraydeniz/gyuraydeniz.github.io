@@ -65,13 +65,14 @@ body {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     padding: 5rem 10%;
     min-height: 70vh;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .hero-content h1 {
@@ -111,13 +112,6 @@ body {
     background-color: var(--primary-blue-hover);
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
 section {
     padding: 4rem 10%;
 }
@@ -131,6 +125,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center;
 }
 
 .skill-card {
@@ -243,14 +238,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 3rem;
-    }
-    
     .nav-links {
-        display: none;
+        display: none; 
     }
     
     .project-card {
