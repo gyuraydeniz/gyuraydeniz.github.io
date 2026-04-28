@@ -14,12 +14,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 body {
     background-color: var(--bg-main);
     color: var(--text-light);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -32,6 +34,10 @@ body {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
+}
+
+.navbar * {
+    text-align: left;
 }
 
 .logo {
@@ -67,7 +73,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 5rem 10%;
     min-height: 70vh;
 }
@@ -120,7 +125,6 @@ section {
 h2 {
     font-size: 2.2rem;
     margin-bottom: 3rem;
-    text-align: center;
     position: relative;
     padding-bottom: 1rem;
 }
@@ -157,27 +161,22 @@ h2::after {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-card);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skills-category {
     width: 100%;
-    margin-top: 0;
     margin-bottom: 2rem;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--accent-cyan);
-    text-align: center;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 1.2rem;
-    align-content: start;
-    flex-grow: 1;
 }
 
 .skill-card {
@@ -189,7 +188,6 @@ h2::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     gap: 0.8rem;
     transition: transform 0.3s, border-color 0.3s;
 }
@@ -210,10 +208,11 @@ h2::after {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    width: 100%;
 }
 
 .project-card {
@@ -224,10 +223,10 @@ h2::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     width: 100%;
+    max-width: 450px;
     gap: 1.2rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
@@ -239,7 +238,6 @@ h2::after {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 100%;
 }
 
 .project-logo {
@@ -256,13 +254,11 @@ h2::after {
 
 .project-title h3 {
     font-size: 1.4rem;
-    margin-bottom: 0;
 }
 
 .web-badge {
     font-size: 1rem;
     color: var(--text-muted);
-    font-weight: 500;
 }
 
 .tags {
@@ -270,7 +266,6 @@ h2::after {
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
 }
 
 .tag {
@@ -285,8 +280,6 @@ h2::after {
 .project-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.6;
-    width: 100%;
 }
 
 .btn-outline {
@@ -302,39 +295,59 @@ h2::after {
     transition: all 0.3s;
 }
 
-.btn-outline i {
-    font-size: 1.1rem;
-}
-
 .btn-outline:hover {
     border-color: var(--primary-blue);
     background-color: rgba(14, 165, 233, 0.1);
 }
 
+/* Uppdaterad Footer */
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 10%;
+    padding: 3rem 5%;
     border-top: 1px solid var(--border-color);
     margin-top: 4rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.footer-links {
+.footer-container {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
 }
 
-.footer-links a {
+.footer-container a {
     color: var(--primary-blue);
     text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+    color: var(--primary-blue-hover);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
     .nav-links {
         display: none; 
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
     }
 }
