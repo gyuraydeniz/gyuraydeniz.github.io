@@ -6,6 +6,7 @@
     --text-light: #f8fafc;
     --text-muted: #94a3b8;
     --border-color: #1e293b;
+    --accent-cyan: #2dd4bf;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
     line-height: 1.6;
 }
 
+/* Navigering */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -117,30 +119,70 @@ section {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
     text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-cyan);
+    border-radius: 2px;
+}
+
+.skills-panels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+@media (min-width: 1200px) {
+    .skills-panels-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.skills-panel {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skills-category {
-    display: block;
     width: 100%;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    color: var(--primary-blue);
-    border-left: 4px solid var(--primary-blue);
-    padding-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-cyan);
+    text-align: center;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1.2rem;
+    align-content: start;
+    flex-grow: 1;
 }
 
 .skill-card {
-    background-color: var(--bg-card);
+    background-color: var(--bg-main);
     border: 1px solid var(--border-color);
     padding: 1.5rem 1rem;
     border-radius: 8px;
@@ -148,6 +190,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 0.8rem;
     transition: transform 0.3s, border-color 0.3s;
 }
@@ -155,23 +198,23 @@ h2 {
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-blue);
-    background-color: rgba(14, 165, 233, 0.05);
 }
 
 .skill-card i {
     font-size: 2.2rem;
-    color: var(--text-light);
 }
 
 .skill-card span {
     font-size: 0.95rem;
     font-weight: 500;
+    color: var(--text-light);
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .project-card {
@@ -180,8 +223,10 @@ h2 {
     border-radius: 12px;
     padding: 2rem;
     display: flex;
-    flex-direction: column; /* Den här regeln saknades antagligen! */
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
     gap: 1.2rem;
     transition: transform 0.3s;
 }
@@ -192,8 +237,10 @@ h2 {
 
 .project-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: 100%;
 }
 
 .project-logo {
@@ -223,6 +270,8 @@ h2 {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .tag {
@@ -238,6 +287,7 @@ h2 {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    width: 100%;
 }
 
 .btn-outline {
@@ -264,19 +314,24 @@ h2 {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 2rem 10%;
     border-top: 1px solid var(--border-color);
     margin-top: 4rem;
     color: var(--text-muted);
     font-size: 0.9rem;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .footer-links a {
     color: var(--primary-blue);
     text-decoration: none;
-    margin-right: 1.5rem;
 }
 
 @media (max-width: 768px) {
