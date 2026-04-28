@@ -22,7 +22,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigering */
 .navbar {
     display: flex;
     justify-content: space-between;
